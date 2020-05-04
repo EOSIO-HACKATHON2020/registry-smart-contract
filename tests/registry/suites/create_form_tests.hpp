@@ -30,7 +30,7 @@ try
     
     auto form = get_form(N(form2));
     auto form_array = form["questions"].get_array();
-    //REQUIRE_MATCHING_OBJECT(form["name"], mvo()("form2"));
+    BOOST_REQUIRE_EQUAL(form["name"], fc::variant("form2"));
     BOOST_REQUIRE_EQUAL(form_array[0], fc::variant("Q1"));
     BOOST_REQUIRE_EQUAL(form_array[1], fc::variant("Q2"));  
     BOOST_REQUIRE_EQUAL(form_array[2], fc::variant("Q3"));  
