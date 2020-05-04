@@ -14,7 +14,7 @@ void registry::create_form(const name &form, const std::vector<std::string> &que
     check(!questions.empty(), "create_form : questions should not be empty");
 
     _form_table.emplace(get_self(), [&](auto &r) {
-        form temp(form, questions);
+        struct form temp(form, questions);
         r = temp;
     });
 }
@@ -42,6 +42,8 @@ void registry::add_response(const name &form, const std::vector<std::string> &an
     auto it = _form_table.find(form.value);
     check(it != _form_table.end(), "add_response : form not exist");
     check(!answers.empty(), "add_response : answers should not be empty");
+    check(it->get_questions().size() == answers.size(), "add_response : answers size should be equal questions size");
+
     response_table _response_table(get_self(), form.value);
 
     _response_table.emplace(get_self(), [&](auto &r) {

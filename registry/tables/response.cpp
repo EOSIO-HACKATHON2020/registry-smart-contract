@@ -4,7 +4,7 @@ response::response()
 {
 }
 
-response::response(const uint64_t &_key, std::vector<std::string> &_answers)
+response::response(const uint64_t &_key, const std::vector<std::string> &_answers)
     : key(_key), answers(_answers)
 {
 }

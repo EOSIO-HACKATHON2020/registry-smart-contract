@@ -21,12 +21,12 @@ public:
     registry_tester();
 
     action_result push_action(const account_name &signer, const action_name &name, const variant_object &data);
-    fc::variant get_stats(const string &symbolname);
-    fc::variant get_account(const account_name &acc, const string &symbolname);
+    fc::variant get_form(const account_name &name);
+    fc::variant get_response(const account_name &name, const account_name &pkey);
 
     action_result create_form(const account_name &signer, const account_name &form, const std::vector<std::string> &questions);
     action_result delete_form(const account_name &signer, const account_name &form);
-    action_result add_response(const account_name &signer, const account_name &form, const std::vector<std::string> &answers)
+    action_result add_response(const account_name &signer, const account_name &form, const std::vector<std::string> &answers);
     
     abi_serializer abi_ser;
 };

@@ -11,7 +11,7 @@ private:
 
 public:
     form();
-    form(const eosio::name &_name, std::vector<std::string> &_questions);
+    form(const eosio::name &_name, const std::vector<std::string> &_questions);
 
     uint64_t primary_key() const;
     std::vector<std::string> get_questions() const;

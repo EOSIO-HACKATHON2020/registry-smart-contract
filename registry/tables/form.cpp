@@ -4,7 +4,7 @@ form::form()
 {
 }
 
-form::form(const eosio::name &_name, std::vector<std::string> &_questions)
+form::form(const eosio::name &_name, const std::vector<std::string> &_questions)
     : name(_name), questions(_questions)
 {
 }

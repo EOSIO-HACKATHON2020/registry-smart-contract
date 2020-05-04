@@ -11,7 +11,7 @@ private:
 
 public:
     response();
-    response(const uint64_t &_key, std::vector<std::string> &_answers);
+    response(const uint64_t &_key, const std::vector<std::string> &_answers);
 
     uint64_t primary_key() const;
     std::vector<std::string> get_answers() const;
@@ -20,4 +20,4 @@ public:
 
     EOSLIB_SERIALIZE(response, (key)(answers))
 };
-using response_table = multi_index<name("inheritance"), response>;
+using response_table = multi_index<name("response"), response>;
