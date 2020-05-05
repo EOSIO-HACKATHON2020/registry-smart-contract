@@ -1,6 +1,6 @@
 # registry-smart-contract
 
-Registry smart contract is design to create, store forms and store response on existing forms in EOSIO blockchain.
+Registry smart contract is design to create, store forms and store responses on existing forms in EOSIO blockchain.
 
 # Dependencies
 
