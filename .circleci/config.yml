@@ -12,4 +12,6 @@ jobs:
             ./build.sh -e /root/eosio/2.0 -c /usr/opt/eosio.cdt -t
       - run:
           name: "Run unit tests"
-          command: ./build/tests/registry_unit_test --log_format=JUNIT --log_sink=./build/tests/Testing/Temporary/LastTest.xml
+          command: |
+            chmod u+x ./scripts/run_units.sh
+            ./scripts/run_units.sh 
