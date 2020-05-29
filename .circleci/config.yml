@@ -8,10 +8,8 @@ jobs:
       - run:
           name: "Build contract and unit tests"
           command: |
-            mkdir -p build
-            cd build
-            cmake -DBUILD_TESTS=true ..
-            make
+            chmod u+x build.sh
+            ./build.sh -e /root/eosio/2.0 -c /usr/opt/eosio.cdt -t
       - run:
           name: "Run unit tests"
-          command: make test
+          command: ./build/tests/registry_unit_test --log_format=JUNIT --log_sink=./build/tests/Testing/Temporary/LastTest.xml
